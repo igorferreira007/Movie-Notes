@@ -1,5 +1,7 @@
 # RocketMovies 🎥
 
+![Screenshot_45](https://github.com/user-attachments/assets/dbe8b166-f711-4132-b974-f3644155bf66)
+
 RocketMovies é uma aplicação web para os amantes de cinema. Com ela, é possível criar, editar, remover e pesquisar notas sobre filmes, além de gerenciar seus dados pessoais.
 
 ## 🌟 Funcionalidades
