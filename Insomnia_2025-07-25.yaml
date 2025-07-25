@@ -1,0 +1,401 @@
+type: collection.insomnia.rest/5.0
+name: NodeMovies
+meta:
+  id: wrk_2494d53518b44ecf9722ba5948df3f7f
+  created: 1721588996746
+  modified: 1721588996746
+  description: ""
+collection:
+  - name: Users
+    meta:
+      id: fld_3f0c8a8e469b42a59fce3b08f295ad11
+      created: 1721596679544
+      modified: 1721851791378
+      sortKey: -1721596679544
+      description: ""
+    children:
+      - url: "{{ _.BASE_URL }}/{{ _.RESOURCE }}"
+        name: Create
+        meta:
+          id: req_d33d8d147e394acd86ae6cc435d2859b
+          created: 1721596682098
+          modified: 1722274640180
+          isPrivate: false
+          description: ""
+          sortKey: -1721596682098
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"name": "Igor",
+            	"email": "igor@email.com",
+            	"password": "123"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/9.3.2
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.BASE_URL }}/{{ _.RESOURCE }}"
+        name: Update
+        meta:
+          id: req_e4ce36366a4340b1a99a4a396d259188
+          created: 1721856372868
+          modified: 1724371895028
+          isPrivate: false
+          description: ""
+          sortKey: -1721856372868
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"name": "Igor Ferreira",
+            	"email": "igor@email.com",
+            	"password": "123",
+            	"old_password": "123"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/9.3.2
+        authentication:
+          type: bearer
+          token: "{{ _.USER_TOKEN }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.BASE_URL }}/{{ _.RESOURCE }}/avatar"
+        name: Avatar
+        meta:
+          id: req_a89f57a78d1b4ceaba02d484b6e2b59e
+          created: 1724545488140
+          modified: 1724546262929
+          isPrivate: false
+          description: ""
+          sortKey: -1724545488140
+        method: PATCH
+        body:
+          mimeType: multipart/form-data
+          params:
+            - id: pair_6c27059bc28c46cd869bd6c3ba9313b3
+              name: avatar
+              value: ""
+              description: ""
+              disabled: false
+              type: file
+              fileName: C:\Users\Igor\Pictures\profile-pic.png
+        headers:
+          - name: Content-Type
+            value: multipart/form-data
+          - name: User-Agent
+            value: insomnia/9.3.3
+        authentication:
+          type: bearer
+          token: "{{ _.USER_TOKEN }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+    environment:
+      RESOURCE: users
+    environmentPropertyOrder:
+      "&":
+        - RESOURCE
+  - name: Notes
+    meta:
+      id: fld_bd4472ea954a4403ad50ad97c713b8e3
+      created: 1722028993430
+      modified: 1722029041987
+      sortKey: -1722028993430
+      description: ""
+    children:
+      - url: "{{ _.BASE_URL }}/{{ _.RESOURCE }}"
+        name: Create
+        meta:
+          id: req_18affcd43809420b8de806e517763eab
+          created: 1722028996116
+          modified: 1724372442068
+          isPrivate: false
+          description: ""
+          sortKey: -1722028996116
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"title": "Spider-man no way home",
+            	"description": "One of the best movies I've ever seen",
+            	"rating": "5",
+            	"tags": ["action", "fantasy"]
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/9.3.2
+        authentication:
+          type: bearer
+          token: "{{ _.USER_TOKEN }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.BASE_URL }}/{{ _.RESOURCE }}/1"
+        name: Show
+        meta:
+          id: req_c83f51ab2122423196fb3c4ab60ba032
+          created: 1722268125433
+          modified: 1724372729178
+          isPrivate: false
+          description: ""
+          sortKey: -1722268125433
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/9.3.2
+        authentication:
+          type: bearer
+          token: "{{ _.USER_TOKEN }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.BASE_URL }}/{{ _.RESOURCE }}/1"
+        name: Delete
+        meta:
+          id: req_ead7ef045b8c487d9f5f87d4c8ab86f3
+          created: 1722268728105
+          modified: 1724372717920
+          isPrivate: false
+          description: ""
+          sortKey: -1722268728105
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/9.3.2
+        authentication:
+          type: bearer
+          token: "{{ _.USER_TOKEN }}"
+          prefix: ""
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.BASE_URL }}/{{ _.RESOURCE }}"
+        name: Index
+        meta:
+          id: req_5272da6983b74f8a9c8636c9a84e524b
+          created: 1722269115784
+          modified: 1725241971193
+          isPrivate: false
+          description: ""
+          sortKey: -1722269115784
+        method: GET
+        parameters:
+          - id: pair_7c37eb0091924de1886ee36b1b3f8eb6
+            name: title
+            value: ""
+            description: ""
+            disabled: false
+        headers:
+          - name: User-Agent
+            value: insomnia/9.3.2
+        authentication:
+          type: bearer
+          token: "{{ _.USER_TOKEN }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+    environment:
+      RESOURCE: notes
+    environmentPropertyOrder:
+      "&":
+        - RESOURCE
+  - name: Tags
+    meta:
+      id: fld_17487a0059304b7c9f83bbece9d59190
+      created: 1722273270912
+      modified: 1722273314965
+      sortKey: -1722273270912
+      description: ""
+    children:
+      - url: "{{ _.BASE_URL }}/{{ _.RESOURCE }}"
+        name: Index
+        meta:
+          id: req_4af0d8e0a3e2490392acc5436d039005
+          created: 1722273273677
+          modified: 1724372805761
+          isPrivate: false
+          description: ""
+          sortKey: -1722273273677
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/9.3.2
+        authentication:
+          type: bearer
+          token: "{{ _.USER_TOKEN }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+    environment:
+      RESOURCE: tags
+    environmentPropertyOrder:
+      "&":
+        - RESOURCE
+  - name: Sessions
+    meta:
+      id: fld_172b4d00512e4eac8bc6564cbb74f205
+      created: 1724344320930
+      modified: 1724344361941
+      sortKey: -1724344320930
+      description: ""
+    children:
+      - url: "{{ _.BASE_URL }}/{{ _.RESOURCE }}"
+        name: Create
+        meta:
+          id: req_9bbd803d10794bb7af4d0d18f4fe9269
+          created: 1724344326024
+          modified: 1725241991549
+          isPrivate: false
+          description: ""
+          sortKey: -1724344326024
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"email": "arthur@email.com",
+            	"password": "123"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/9.3.3
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+    environment:
+      RESOURCE: sessions
+    environmentPropertyOrder:
+      "&":
+        - RESOURCE
+  - name: Files
+    meta:
+      id: fld_6d8965c054c84aadaeb08f9641d057c5
+      created: 1724605965216
+      modified: 1724606027390
+      sortKey: -1724605965216
+      description: ""
+    children:
+      - url: "{{ _.BASE_URL }}/{{ _.RESOURCE }}/a50640c36239c321b04a-profile-pic.png"
+        name: Avatar
+        meta:
+          id: req_541831beff63483abfc5e01439d81bc8
+          created: 1724605969834
+          modified: 1724606087561
+          isPrivate: false
+          description: ""
+          sortKey: -1724605969834
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/9.3.3
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+    environment:
+      RESOURCE: files
+    environmentPropertyOrder:
+      "&":
+        - RESOURCE
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_44115fd62193628363e91a8f6866a7f08a750e78
+    created: 1721588996750
+    modified: 1721588996750
+environments:
+  name: Base Environment
+  meta:
+    id: env_44115fd62193628363e91a8f6866a7f08a750e78
+    created: 1721588996748
+    modified: 1724371587794
+    isPrivate: false
+  data:
+    USER_TOKEN: "{% response 'body', 'req_9bbd803d10794bb7af4d0d18f4fe9269',
+      'b64::JC50b2tlbg==::46b', 'always', 60 %}"
+  subEnvironments:
+    - name: dev
+      meta:
+        id: env_35ce4b724b25496594eda1aa901f35cf
+        created: 1721851575745
+        modified: 1721851630866
+        isPrivate: false
+        sortKey: 1721851575745
+      data:
+        BASE_URL: localhost:3333
+      color: "#02c505"
+    - name: prod
+      meta:
+        id: env_dca33f88536348a2830cb821f3c8cb1e
+        created: 1725239403710
+        modified: 1725239442553
+        isPrivate: false
+        sortKey: 1725239403710
+      data:
+        BASE_URL: https://rocketmovie-notes-api.onrender.com
+      color: "#ff0000"
